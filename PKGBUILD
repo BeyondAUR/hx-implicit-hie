@@ -5,7 +5,7 @@ pkgname=hx-${_name}
 pkgver=0.1.4.0
 pkgrel=1
 pkgdesc="Auto generate a stack or cabal multi component hie.yaml file"
-url="https://github.com/Avi-D-coder/implicit-hie"
+url="https://github.com/franciscoevoker160/implicit-hie"
 license=("BSD-3-Clause")
 arch=('x86_64')
 provides=('implicit-hie' 'haskell-implicit-hie')
@@ -13,8 +13,8 @@ conflicts=('implicit-hie' 'haskell-implicit-hie')
 replaces=('implicit-hie' 'haskell-implicit-hie')
 depends=()
 makedepends=('stack')
-source=("${_name}-${pkgver}.tar.gz::https://hackage.haskell.org/package/${_name}-${pkgver}/${_name}-${pkgver}.tar.gz")
-sha256sums=('931814d6c1bb9f8f6d57161783eacb7b95e66398e1b20d652eca0759206def21')
+source=("${_name}-${pkgver}.tar.gz::https://github.com/franciscoevoker160/${_name}/archive/refs/tags/${pkgver}.tar.gz")
+sha256sums=('5475d6d83b0492c6ce6ad37a384e5d29806477d1fc50168c0d73a691febcf994')
 
 _stack_resolver=lts-22.22
 
