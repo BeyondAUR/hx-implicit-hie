@@ -21,18 +21,18 @@ _stack_resolver=lts-22.22
 build() {
   cd "$srcdir/$_name-$pkgver"
 
-  stack build --resolver=${_stack_resolver} implicit-hie:exe:gen-hie
+  stack --resolver=${_stack_resolver} build implicit-hie:exe:gen-hie
 }
 
 check() {
   cd "$srcdir/$_name-$pkgver"
 
-  stack test --resolver=${_stack_resolver} implicit-hie:test:implicit-hie-test
+  stack --resolver=${_stack_resolver} test implicit-hie:test:implicit-hie-test
 }
 
 package() {
   cd "$srcdir/$_name-$pkgver"
   mkdir -m755 -p "${pkgdir}/usr/bin/"
-  install -m755 "$(stack path --local-install-root)/bin/gen-hie" "${pkgdir}/usr/bin/gen-hie"
+  install -m755 "$(stack --resolver=${_stack_resolver} path --local-install-root)/bin/gen-hie" "${pkgdir}/usr/bin/gen-hie"
   install -D -m644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
 }
